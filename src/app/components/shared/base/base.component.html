@@ -10,23 +10,55 @@
         <span class="subtitle">Your studies</span>
         <span class="example-spacer"></span>
         <button mat-flat-button
-                color="primary">Add new study</button>
+                color="primary"
+                class="add-new">Add new study</button>
       </mat-toolbar>
     </div>
+    <div class="infoCardsContainer">
 
-    <mat-grid-list cols="3"
-                   rowHeight="2:1">
-      <mat-grid-tile>
-        <info-card studyTitle="CVD"
-                   studyId="ID1234-5678"
-                   studyName="Study name"
-                   studyPhase="Feasibility"
-                   studyScenerios="1,2,3"
-                   studyDeadline="CVD"></info-card>
-      </mat-grid-tile>
-      <mat-grid-tile>2</mat-grid-tile>
-      <mat-grid-tile>3</mat-grid-tile>
-      <mat-grid-tile>4</mat-grid-tile>
-    </mat-grid-list>
+
+      <mat-grid-list [cols]="breakpoint"
+                     rowHeight="3:2"
+                     (window:resize)="handleSize($event)">
+        <mat-grid-tile><info-card studyTitle="CVD"
+                     studyId="ID1234-5678"
+                     studyName="Study name"
+                     studyPhase="Feasibility"
+                     studyScenerios="1,2,3"
+                     studyDeadline="xx/xx-xxxx"></info-card></mat-grid-tile>
+        <mat-grid-tile><info-card studyTitle="CVD"
+                     studyId="ID1234-5678"
+                     studyName="Study name"
+                     studyPhase="Feasibility"
+                     studyScenerios="1,2,3"
+                     studyDeadline="xx/xx-xxxx"></info-card></mat-grid-tile>
+        <mat-grid-tile><info-card studyTitle="CVD"
+                     studyId="ID1234-5678"
+                     studyName="Study name"
+                     studyPhase="Feasibility"
+                     studyScenerios="1,2,3"
+                     studyDeadline="xx/xx-xxxx"></info-card></mat-grid-tile>
+        <mat-grid-tile><info-card studyTitle="CVD"
+                     studyId="ID1234-5678"
+                     studyName="Study name"
+                     studyPhase="Feasibility"
+                     studyScenerios="1,2,3"
+                     studyDeadline="xx/xx-xxxx"></info-card></mat-grid-tile>
+        <mat-grid-tile><info-card studyTitle="CVD"
+                     studyId="ID1234-5678"
+                     studyName="Study name"
+                     studyPhase="Feasibility"
+                     studyScenerios="1,2,3"
+                     studyDeadline="xx/xx-xxxx"></info-card></mat-grid-tile>
+        <mat-grid-tile><info-card studyTitle="CVD"
+                     studyId="ID1234-5678"
+                     studyName="Study name"
+                     studyPhase="Feasibility"
+                     studyScenerios="1,2,3"
+                     studyDeadline="xx/xx-xxxx"></info-card></mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+
   </mat-card-content>
 </mat-card>

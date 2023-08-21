@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ThemePalette } from '@angular/material/core';
 
@@ -25,10 +25,16 @@ export const DATE_FORMATS = {
   styleUrls: ['./base.component.scss'],
   providers: [],
 })
-export class BaseComponent implements AfterViewInit {
+export class BaseComponent implements OnInit {
   public color: ThemePalette = 'primary';
-
+  breakpoint: number;
   constructor() {}
 
-  ngAfterViewInit() {}
+  ngOnInit() {
+    this.breakpoint = window.innerWidth <= 600 ? 1 : 3;
+  }
+
+  handleSize(event: any) {
+    this.breakpoint = event.target.innerWidth <= 600 ? 1 : 3;
+  }
 }

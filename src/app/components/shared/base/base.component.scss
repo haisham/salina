@@ -1,10 +1,13 @@
 .profile-card {
   width: 90%;
-  height: 100%;
   position: relative;
   top: 60px;
   margin: 0 auto;
   background-color: #FFFFFF;
+}
+
+.infoCardsContainer {
+  padding-top: 40px;
 }
 
 .info-bar {
@@ -50,4 +53,8 @@
 
 .mat-grid-list {
   padding-top: 30px;
+}
+
+.add-new {
+  border-radius: 10px;
 }
