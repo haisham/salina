@@ -1,0 +1,31 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.suggestSelection": "first",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "html.format.wrapAttributes": "force-aligned",
+  "sfmt.cssinsertlines": true,
+  "sfmt.insize": 4,
+  "sfmt.preserve": "css",
+  "sfmt.textpreserve": true,
+  "tsco.useRegions": false,
+  "tsco.accessorsBeforeCtor": true,
+  "tsco.organizeOnSave": true,
+  "tsco.groupPropertiesWithDecorators": true,
+  "tsco.treatArrowFunctionPropertiesAsMethods": true,
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.highlightModifiedTabs": true
+}

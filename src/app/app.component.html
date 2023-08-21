@@ -1,0 +1,26 @@
+<header>
+  <mat-toolbar color="primary">
+    <img class="logo"
+         [src]="logo">
+    <div class="header-title"><span class="underline">Sa</span>lina</div>
+    <span class="example-spacer"></span>
+    <div class="header-right">
+      <div class="toolbar-icons">
+        <div class="profile-container">
+          <mat-icon svgIcon="profile-icon"
+                    aria-hidden="false"
+                    aria-label="profile-icon">
+          </mat-icon>
+        </div>
+        <div class="profile-text">FDQV</div>
+      </div>
+      <div class="toolbar-icons">
+        <mat-icon>menu</mat-icon>
+      </div>
+    </div>
+  </mat-toolbar>
+</header>
+
+<body>
+  <router-outlet></router-outlet>
+</body>

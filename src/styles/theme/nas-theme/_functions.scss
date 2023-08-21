@@ -1,0 +1,16 @@
+@use "@angular/material" as mat;
+
+@function nas-theme-extended($primary, $secondary, $accent, $warn, $success, $white) {
+  $default-theme: mat.define-dark-theme((color: (primary: $primary,
+        accent: $accent,
+        warn: $warn,
+      ),
+    ));
+
+  $extended: (success: $success,
+    secondary: $secondary,
+    white: $white,
+  );
+
+  @return map-merge($default-theme, $extended);
+}

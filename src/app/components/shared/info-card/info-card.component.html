@@ -1,0 +1,39 @@
+<div class="card-container">
+  <mat-card class="info-card">
+    <mat-card-header>
+      <mat-card-title>{{studyTitle}}</mat-card-title>
+      <mat-card-subtitle>
+        <div class="studyInfo">{{studyId}}</div>
+        <div class="studyInfo">{{studyName}}</div>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="studyDetails">
+      <div>Phase: <button class="feasibilityButton"
+                mat-flat-button
+                color="accent">{{studyPhase}}</button></div>
+      <div class="studyScenerios">
+        Scenerios:
+        <span class="buttonContainer">
+          <button mat-mini-fab
+                  color="warn"
+                  class="sceneriosButton">1</button>
+        </span>
+        <span class="buttonContainer">
+          <button mat-mini-fab
+                  color="secondary"
+                  class="sceneriosButton">2</button>
+        </span>
+        <span class="buttonContainer">
+          <button mat-mini-fab
+                  color="primary"
+                  class="sceneriosButton">3</button>
+
+        </span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

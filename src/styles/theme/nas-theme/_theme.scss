@@ -1,0 +1,122 @@
+@use "sass:map";
+@use "sass:meta";
+@use "@angular/material" as mat;
+@use "_functions" as functions;
+@use "_variables" as variables;
+
+$theme-primary: mat.define-palette(variables.$nas-primary);
+$theme-secondary: mat.define-palette(variables.$nas-secondary);
+$theme-accent: mat.define-palette(variables.$nas-accent);
+$theme-warn: mat.define-palette(variables.$nas-warn);
+$theme-success: mat.define-palette(variables.$nas-success);
+$theme-white: mat.define-palette(variables.$nas-white);
+
+$primary-theme: functions.nas-theme-extended($theme-primary,
+    $theme-secondary, $theme-accent,
+    $theme-warn,
+    $theme-success,
+    $theme-white);
+
+$primary-palette: map.get($primary-theme, primary);
+$accent-palette: map.get($primary-theme, accent);
+$secondary-palette: map.get($primary-theme, secondary);
+$success-palette: map.get($primary-theme, success);
+$white-palette: map.get($primary-theme, white);
+
+
+.mat-mdc-fab,
+.mat-mdc-mini-fab {
+  &.mat-secondary {
+    background: mat.get-color-from-palette($secondary-palette, default);
+    color: mat.get-color-from-palette($secondary-palette, 500-contrast);
+  }
+}
+
+
+.mdc-button {
+  &.view-message {
+    font-size: 12px;
+  }
+
+  &.mat-mdc-unelevated-button:not(:disabled) {
+    &.mat-success {
+      background: mat.get-color-from-palette($success-palette, default);
+      color: mat.get-color-from-palette($success-palette, 500-contrast);
+    }
+  }
+
+
+
+  &.mat-mdc-unelevated-button:not(:disabled) {
+    &.mat-accent {
+      background: mat.get-color-from-palette($accent-palette, default);
+      color: mat.get-color-from-palette($accent-palette, 500-contrast);
+    }
+  }
+
+  &.mat-mdc-unelevated-button:disabled {
+    background: mat.get-color-from-palette($primary-palette, 200);
+    color: mat.get-color-from-palette($primary-palette, 300-contrast);
+  }
+
+  &.mat-mdc-unelevated-button:not(:disabled) {
+    &.mat-white {
+      background: mat.get-color-from-palette($white-palette, default);
+      border: 0.063rem solid;
+      border-color: mat.get-color-from-palette($white-palette, 500-contrast);
+      color: mat.get-color-from-palette($white-palette, 500-contrast);
+    }
+  }
+
+  &.mat-mdc-unelevated-button:disabled {
+    &.mat-white {
+      background: mat.get-color-from-palette($white-palette, default);
+      border: 0.063rem solid;
+      border-color: mat.get-color-from-palette($white-palette, 600-contrast);
+      color: mat.get-color-from-palette($white-palette, 600-contrast);
+    }
+  }
+
+  .mat-icon {
+    &.icon-right {
+      order: 2;
+      margin-left: 8px;
+      margin-right: -4px;
+    }
+  }
+}
+
+.mat-button-toggle-appearance-standard {
+  .mat-button-toggle-button {
+    background: mat.get-color-from-palette($white-palette, default);
+    color: mat.get-color-from-palette($white-palette, 500-contrast);
+  }
+
+  &.mat-button-toggle-checked {
+    .mat-button-toggle-button {
+      background: mat.get-color-from-palette($primary-palette, default);
+      color: mat.get-color-from-palette($primary-palette, 500-contrast);
+    }
+  }
+}
+
+.mat-toolbar {
+
+  &.primary-light {
+    background: mat.get-color-from-palette($primary-palette, 200);
+    color: mat.get-color-from-palette($primary-palette, 500);
+  }
+
+  .toolbar-title {
+    font-weight: bold;
+  }
+
+  .logo {
+    position: relative;
+    width: 9.5rem;
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
+@include mat.all-component-themes($primary-theme);

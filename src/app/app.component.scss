@@ -1,0 +1,55 @@
+.nav {
+  margin-left: 30px;
+
+  button {
+    margin-left: 10px;
+  }
+}
+
+.logo {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.underline {
+  border-bottom: 2px solid #3b97de;
+}
+
+.profile-text {
+  font-size: 11px;
+}
+
+.profile-container {
+  position: relative;
+  top: 12px;
+  left: 3px;
+}
+
+.toolbar-icons {
+  padding: 0 10px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.header-right {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  grid-column-gap: 10px;
+
+  button {
+    box-shadow: none;
+    background: none;
+    padding: 0;
+    min-width: 40px;
+    min-height: 40px;
+
+    .mat-icon {
+      width: 34px;
+      height: 34px;
+      font-size: 30px;
+    }
+  }
+}
