@@ -5,8 +5,35 @@
   grid-row-gap: 1rem;
 }
 
+.summary-icons {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.summary-text {
+  display: block;
+  font-size: 11px;
+  color: #061961;
+}
+
+.summary-container {
+  position: relative;
+  top: 12px;
+  left: 3px;
+}
+
+.mat-icon {
+  width: 34px;
+  height: 34px;
+  font-size: 30px;
+}
+
 .info-card {
-  border: 1px solid #263c7c;
+  border-top: 1px solid #263c7c;
+  border-left: 30px solid #263c7c;
+  border-right: 1px solid #263c7c;
+  border-bottom: 1px solid #263c7c;
 }
 
 .info-card,

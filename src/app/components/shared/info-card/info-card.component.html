@@ -1,12 +1,25 @@
 <div class="card-container">
   <mat-card class="info-card">
+    <span class="summary-icons">
+      <span class="summary-container">
+        <mat-icon svgIcon="summary-icon"
+                  aria-hidden="false"
+                  aria-label="summary-icon">
+        </mat-icon>
+      </span>
+      <span class="summary-text">summary</span>
+    </span>
     <mat-card-header>
-      <mat-card-title>{{studyTitle}}</mat-card-title>
+
+      <mat-card-title>{{studyTitle}}
+
+      </mat-card-title>
       <mat-card-subtitle>
         <div class="studyInfo">{{studyId}}</div>
         <div class="studyInfo">{{studyName}}</div>
       </mat-card-subtitle>
     </mat-card-header>
+
     <mat-card-content class="studyDetails">
       <div>Phase: <button class="feasibilityButton"
                 mat-flat-button
