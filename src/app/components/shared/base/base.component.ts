@@ -2,23 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { ThemePalette } from '@angular/material/core';
 
-import * as _moment from 'moment';
-import { default as _rollupMoment } from 'moment';
-
-const moment = _rollupMoment || _moment;
-
-export const DATE_FORMATS = {
-  parse: {
-    dateInput: 'LL',
-  },
-  display: {
-    dateInput: 'DD.MM.YYYY',
-    monthYearLabel: 'YYYY',
-    dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'YYYY',
-  },
-};
-
 @Component({
   selector: 'base-component',
   templateUrl: './base.component.html',
@@ -27,14 +10,25 @@ export const DATE_FORMATS = {
 })
 export class BaseComponent implements OnInit {
   public color: ThemePalette = 'primary';
-  breakpoint: number;
+  breakpoint: number = 3;
   constructor() {}
 
   ngOnInit() {
-    this.breakpoint = window.innerWidth <= 600 ? 1 : 3;
+    this.determineCols(window.innerWidth);
   }
 
   handleSize(event: any) {
-    this.breakpoint = event.target.innerWidth <= 600 ? 1 : 3;
+    let windowWidth = event.target.innerWidth;
+    this.determineCols(windowWidth);
+  }
+
+  determineCols(windowWidth: any) {
+    if (windowWidth < 1200 && windowWidth > 768) {
+      this.breakpoint = 2;
+    } else if (windowWidth < 768) {
+      this.breakpoint = 1;
+    } else {
+      this.breakpoint = 3;
+    }
   }
 }
