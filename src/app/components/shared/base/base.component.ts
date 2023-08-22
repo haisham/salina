@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ThemePalette } from '@angular/material/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'base-component',
@@ -11,7 +12,7 @@ import { ThemePalette } from '@angular/material/core';
 export class BaseComponent implements OnInit {
   public color: ThemePalette = 'primary';
   breakpoint: number = 3;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.determineCols(window.innerWidth);
@@ -30,5 +31,9 @@ export class BaseComponent implements OnInit {
     } else {
       this.breakpoint = 3;
     }
+  }
+
+  gotoDetails() {
+    this.router.navigate(['/study-details']);
   }
 }

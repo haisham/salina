@@ -1,0 +1,159 @@
+<div class="back-button-container"><button mat-flat-button
+          color="primary"
+          class="back-button"
+          [routerLink]="['']">
+    &lt; Back </button></div>
+
+<mat-card class="study-card">
+  <mat-card-header>
+    <mat-card-title>ID1234-5678</mat-card-title>
+    <mat-card-subtitle>Study Name</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="status-container">
+      <div class="status-info info-holder">
+        <div>Salina status</div>
+        <div>Finished</div>
+      </div>
+      <div class="updated info-holder">
+        <div>Last updated</div>
+        <div>xx-xx-xxxx by John Doe</div>
+      </div>
+
+    </div>
+    <div class="study-text">
+      <div class="study-title">
+        Study description
+      </div>
+      <div class="study-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore
+        magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+
+    <div class="subject-container">
+      <div class="subject-title">Study details</div>
+      <div class="subject-compound info-holder">
+        <div>Compound</div>
+        <div>ID1234</div>
+      </div>
+      <div class="subject-phase info-holder">
+        <div>Phase</div>
+        <div>Phase 3</div>
+      </div>
+
+      <div class="subject-treatment info-holder">
+        <div>Subjects to enter treatment</div>
+        <div>1234</div>
+      </div>
+
+      <div class="subject-approval info-holder">
+        <div>Protocol approval</div>
+        <div>xx-xx-xxxx</div>
+      </div>
+
+    </div>
+
+    <div class="scenerios-container">
+      <div class="scenerios-title">Scenerios</div>
+      <div class="scenerios-text">Select upto 5 scenerios to compare</div>
+      <div class="input-holder"><input class="scenerios-input"
+               type="text" /></div>
+      <div class="chart-container">
+        <canvas baseChart
+                width="900"
+                height="400"
+                [type]="'line'"
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [legend]="lineChartLegend">
+        </canvas>
+      </div>
+      <div class="table-container">
+        <table mat-table
+               [dataSource]="dataSource"
+               color="primary">
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell
+                *matHeaderCellDef></th>
+            <td mat-cell
+                *matCellDef="let element"><button mat-mini-fab
+                      color="primary"
+                      class="sceneriosButton">1</button></td>
+          </ng-container>
+
+          <ng-container matColumnDef="scenerios">
+            <th mat-header-cell
+                *matHeaderCellDef> Scenerions (1) </th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.scenerios}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="countries">
+            <th mat-header-cell
+                *matHeaderCellDef> Countries</th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.countries}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="sites">
+            <th mat-header-cell
+                *matHeaderCellDef> Sites</th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.sites}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="predictedEndDate">
+            <th mat-header-cell
+                *matHeaderCellDef> Predicted end date (LPFT)</th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.predictedEndDate}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="enrolmentRate">
+            <th mat-header-cell
+                *matHeaderCellDef> Enrolment rate</th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.enrolmentRate}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="retentionRate">
+            <th mat-header-cell
+                *matHeaderCellDef> Retention rate</th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.retentionRate}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="lastEdited">
+            <th mat-header-cell
+                *matHeaderCellDef> Last edited</th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.lastEdited}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell
+                *matHeaderCellDef>Status</th>
+            <td mat-cell
+                *matCellDef="let element"> {{element.status}} </td>
+          </ng-container>
+
+          <tr mat-header-row
+              *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row
+              *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+
+
+
+  </mat-card-content>
+</mat-card>
