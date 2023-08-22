@@ -1,0 +1,43 @@
+# Node.js with Angular
+# Build a Node.js project that uses Angular.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+  - sumo/main
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "16.x"
+    displayName: "Install Node.js 18.x"
+  - script: |
+      cd Salina.AngularWorkspace/
+      npm install -g @angular/cli
+      npm ci
+      npm run build-release:components
+      npm run build-release:ui
+      ls dist
+    displayName: "npm install and build"
+    workingDirectory: "$(Build.SourcesDirectory)"
+
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: "$(Build.SourcesDirectory)/Salina.AngularWorkspace/dist/"
+      includeRootFolder: false
+      archiveType: "zip"
+      archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip"
+      replaceExistingArchive: true
+    displayName: "Archive files"
+
+  - task: AzureWebApp@1
+    inputs:
+      azureSubscription: "Salina-pipeline"
+      appType: "webApp"
+      appName: "salina"
+      package: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip"
+      deploymentMethod: "auto"
+    displayName: "Publish app"
