@@ -15,35 +15,35 @@
 
       </mat-card-title>
       <mat-card-subtitle>
-        <div class="studyInfo">{{studyId}}</div>
-        <div class="studyInfo">{{studyName}}</div>
+        <div class="study-info">{{studyId}}</div>
+        <div class="study-info">{{studyName}}</div>
       </mat-card-subtitle>
     </mat-card-header>
 
-    <mat-card-content class="studyDetails">
-      <div>Phase: <button class="feasibilityButton"
+    <mat-card-content class="study-details">
+      <div>Phase: <button class="feasibility-button"
                 mat-flat-button
                 color="accent">{{studyPhase}}</button></div>
-      <div class="studyScenerios">
+      <div class="study-scenerios">
         Scenerios:
-        <span class="buttonContainer">
+        <span class="button-container">
           <button mat-mini-fab
                   color="warn"
                   class="sceneriosButton">1</button>
         </span>
-        <span class="buttonContainer">
+        <span class="button-container">
           <button mat-mini-fab
                   color="secondary"
                   class="sceneriosButton">2</button>
         </span>
-        <span class="buttonContainer">
+        <span class="button-container">
           <button mat-mini-fab
                   color="primary"
                   class="sceneriosButton">3</button>
 
         </span>
       </div>
-      <div class="studyScenerios">
+      <div class="study-scenerios">
         Next deadline: {{studyDeadline}} <span class="goto-study">Go to study ></span>
       </div>
     </mat-card-content>

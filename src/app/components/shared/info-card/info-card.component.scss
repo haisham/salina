@@ -47,20 +47,20 @@
   font-weight: bold;
 }
 
-.studyDetails {
+.study-details {
   padding-top: 20px;
   font-size: 0.8rem;
   font-weight: normal;
 }
 
-.studyInfo {
+.study-info {
   display: block;
   font-weight: normal;
   margin-top: 5px;
   font-size: 1.2rem;
 }
 
-.feasibilityButton {
+.feasibility-button {
   margin-left: 20px;
   border-radius: 30px;
   font-size: 0.8rem;
@@ -68,11 +68,11 @@
   color: #061961;
 }
 
-.buttonContainer {
+.button-container {
   padding: 5px;
 }
 
-.studyScenerios {
+.study-scenerios {
   margin-top: 10px;
 }
 
@@ -97,12 +97,15 @@
     font-size: 1.2rem;
   }
 
-  .studyInfo {
+  .study-info {
     font-size: 0.9rem;
   }
 
-  .studyDetails {
+  .study-details {
     padding-top: 5px;
     font-size: 0.6rem;
+
   }
+
+
 }
